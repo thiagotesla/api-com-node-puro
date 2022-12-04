@@ -128,8 +128,7 @@ exports.delete = (req, res, next) => {
     Product
     .findByIdAndDelete(req.params.id)
     .then(data => {
-        res.status(204).send({
-        })
+        res.status(204).send()
     })
     .catch(error => {
         res.status(400).send({
