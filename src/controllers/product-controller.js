@@ -24,7 +24,7 @@ exports.getBySlug = ((req, res, next) => {
     Product.findOne({
         slug: req.params.slug,
         active: true
-    }, 'title slug price slug tags')
+    }, 'title slug price tags')
         .then(data => {
             res.status(200).send({
                 data: data
@@ -41,7 +41,7 @@ exports.getBySlug = ((req, res, next) => {
 })
 
 exports.getById = ((req, res, next) => {
-    Product.findById(req.params.id, 'title slug price slug tags')
+    Product.findById(req.params.id, 'title slug price tags')
         .then(data => {
             res.status(200).send({
                 data: data
@@ -61,7 +61,7 @@ exports.getByTag = ((req, res, next) => {
     Product.find({
         tags: req.params.tag,
         active: true
-    }, 'title slug price slug tags')
+    }, 'title slug price tags')
         .then(data => {
             res.status(200).send({
                 data: data
